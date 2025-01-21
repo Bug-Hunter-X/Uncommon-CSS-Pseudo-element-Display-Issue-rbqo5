@@ -1,0 +1,27 @@
+The solution involves adding width and height (or other dimension-setting properties such as min-width, max-width, etc.) to the parent element.  This gives the absolutely positioned pseudo-element a space to render within:
+
+```css
+div {
+  position: relative;
+  width: 200px; /* Added width */
+  height: 100px; /* Added height */
+}
+
+div::before {
+  content: "This text should appear";
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+```
+
+Alternatively, using relative positioning will also display it correctly without requiring the parent dimensions.
+
+```css
+div::before {
+  content: "This text should appear";
+  position: relative; /* Changed to relative */
+  top: 0;
+  left: 0;
+}
+```
