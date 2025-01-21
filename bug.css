@@ -1,0 +1,16 @@
+The following CSS code snippet demonstrates an issue where the `::before` pseudo-element is not displaying as expected:
+
+```css
+div {
+  position: relative;
+}
+
+div::before {
+  content: "This text should appear";
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+```
+
+The problem is that the text does not appear because the `position: absolute;` property requires a defined width and height for the parent element (div). Without specified dimensions, the pseudo-element has no space to render within the parent container.
